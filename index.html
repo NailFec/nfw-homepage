@@ -3,77 +3,260 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>NailFec website</title>
-	<link rel="stylesheet" href="styles.css" />
+	<title>NailFec</title>
+	<meta name="description" content="About me, NailFec, a university student focused on CS, AI, and competitive programming." />
 	<meta name="color-scheme" content="light dark" />
+	<meta name="theme-color" content="#0a0a0a" />
+	<link rel="icon" href="assets/avatar.jpg" type="image/jpeg" />
+	<link rel="stylesheet" href="fonts.css" />
+	<link rel="stylesheet" href="styles.css" />
+	<script>
+		(function () {
+			const key = 'theme-preference';
+			const stored = localStorage.getItem(key);
+			const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			document.documentElement.dataset.theme = stored || (dark ? 'dark' : 'light');
+		})();
+	</script>
 </head>
 <body>
-	<header class="site-header" role="banner">
-		<nav class="top-nav" aria-label="Primary">
-			<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
-				<span class="toggle-icon" aria-hidden="true">◐</span>
-			</button>
-		</nav>
-	</header>
+	<button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+		<span class="icon" style="--icon: url('assets/icons/mdi-theme-light-dark.svg')" aria-hidden="true"></span>
+	</button>
 
-	<main class="container" role="main">
-		<section class="hero">
-			<h1 id="home-title">NailFec /</h1>
-			<p class="subtitle">Quick links</p>
+	<main class="page">
+		<section class="intro">
+			<img class="avatar" src="assets/avatar.jpg" alt="NailFec avatar" width="168" height="168" />
+			<div class="intro-main">
+				<div class="intro-title">
+					<h1>NailFec</h1>
+					<p class="tagline">Born in Shanghai · CS &amp; AI · Competitive Programming</p>
+				</div>
+
+				<div class="prose">I’m currently a university student, studying Computer Science and Artificial Intelligence. I’m highly motivated to participate in CS and AI-related programs, internships, or collaborative projects. I’m happy to help where I can, and I’m also open to taking on paid projects.
+
+<strong>Setups:</strong>
+<strong>Computer:</strong> I run CachyOS (previously Arch Linux) with the niri window manager. I have a desktop PC with dual monitors and a laptop with a large screen. Total storage capacity is approximately 20 TB.
+<strong>Phone and watch:</strong> I use a Google Pixel 9 Pro as my daily driver and a Google Pixel Watch 4. I genuinely enjoy both.
+
+<strong>Skills:</strong>
+<strong>Languages:</strong> Native speaker of Simplified Chinese (used only in daily life). English proficiency is at C1 level, with stronger performance in CS/AI technical contexts. I can also read most Traditional Chinese.
+<strong>Competitive Programming:</strong> Passionate about algorithms and competitive programming. I won awards in high school, currently create algorithm explanation videos on YouTube, practice regularly on Codeforces, and plan to compete in XCPC.
+<strong>AI:</strong> I closely follow the latest AI models and evaluate them across different domains. I have intermediate knowledge of machine learning algorithms and model training, and remain very interested in this field.
+<strong>Web Development:</strong> Extensive experience in front-end development. I also have some back-end knowledge and am currently deepening my understanding of networking.
+
+<strong>Channels (YouTube &amp; Bilibili):</strong>
+<strong>NailFec:</strong> Personal channel sharing experiences and thoughts.
+<strong>NailFec Algo:</strong> Clear introductions to competitive programming algorithms.
+<strong>NailFec Linux:</strong> Recommendations of useful tools and efficient Linux techniques.
+
+<strong>Projects (GitHub):</strong>
+<strong>Liminal:</strong> A GUI tool for configuring the Limine bootloader with real-time preview.
+<strong>RubricFlow:</strong> A web platform that helps Shanghai high-school English teachers use AI to grade open-ended responses (translations, summaries, essays). It assigns scores and generates analytical reports based on specific requirements.</div>
+			</div>
 		</section>
 
-
-		<section class="links-grid">
-			<h2 id="site-links">Site</h2>
-			<ul class="link-list">
-				<li><a href="/code/shyc_ssd/" class="link-card">SHYC SSD</a></li>
-				<li><a href="/code/clock/" class="link-card">Clock</a></li>
-				<li><a href="/code/countdown/" class="link-card">Countdown</a></li>
-				<li><a href="/code/schedule/" class="link-card">Schedule</a></li>
-                <li><a href="/cpp/" class="link-card">cpp</a></li>
+		<section class="contact" id="contact">
+			<h2>Contact</h2>
+			<p class="section-note">Feel free to reach out to me via email, Telegram, or Signal.</p>
+			<ul class="link-list compact">
+				<li>
+					<a class="link" href="mailto:nailfec17@gmail.com">
+						<span class="icon" style="--icon: url('assets/icons/mdi-email-outline.svg')" aria-hidden="true"></span>
+						<strong>E-mail</strong>
+					</a>
+				</li>
+				<li>
+					<a class="link" href="https://t.me/NailFec" target="_blank" rel="noreferrer noopener">
+						<span class="icon" style="--icon: url('assets/icons/simple-icons-telegram.svg')" aria-hidden="true"></span>
+						<strong>Telegram</strong>
+					</a>
+				</li>
+				<li>
+					<a class="link" href="https://signal.me/#eu/PoudnXvPtRu8UY4fqqLRn9ji8mtL5FuhDeeSH6_y7Mep8sMHgyZBFrnDIYpdGsfE" target="_blank" rel="noreferrer noopener">
+						<span class="icon" style="--icon: url('assets/icons/simple-icons-signal.svg')" aria-hidden="true"></span>
+						<strong>Signal</strong>
+					</a>
+				</li>
+				<li>
+					<a class="link" href="assets/nailfec.asc" download>
+						<span class="icon" style="--icon: url('assets/icons/mdi-key-variant.svg')" aria-hidden="true"></span>
+						<strong>GPG public key</strong>
+					</a>
+				</li>
 			</ul>
 		</section>
 
-		<section class="links-grid">
-			<h2 id="social-links">Social</h2>
-			<ul class="link-list">
-				<li><a href="http://nailfec.net" class="link-card" target="_blank" rel="noreferrer noopener">Website</a></li>
-                <li><a href="https://github.com/NailFec/" class="link-card" target="_blank" rel="noreferrer noopener">GitHub</a></li>
-				<li><a href="mailto:nailfec17@gmail.com" class="link-card">Email</a></li>
-				<li><a href="https://codeforces.com/profile/NailFec" class="link-card" target="_blank" rel="noreferrer noopener">CodeForces</a></li>
-                <li><a href="https://wakatime.com/@NailFec" class="link-card" target="_blank" rel="noreferrer noopener">WakaTime</a></li>
-				<li><a href="https://space.bilibili.com/3494364286290001" class="link-card" target="_blank" rel="noreferrer noopener">哔哩哔哩</a></li>
-				<li><a href="https://www.luogu.com.cn/user/1121118" class="link-card" target="_blank" rel="noreferrer noopener">洛谷</a></li>
-			</ul>
+		<section class="channels" id="channels">
+			<h2>Channels</h2>
+			<p class="section-note">I am planning to make videos on YouTube and Bilibili. Stay tuned ~</p>
+			<div class="channel-board">
+				<article class="channel-tile">
+					<div class="channel-tile-top">
+<!--						<span class="channel-badge">Personal</span>-->
+						<h3>NailFec</h3>
+						<p>My main personal channel, sharing my experiences and thoughts.</p>
+					</div>
+					<div class="channel-tile-actions">
+						<a href="https://www.youtube.com/@NailFec" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-youtube.svg')" aria-hidden="true"></span>
+							YouTube
+						</a>
+						<a href="https://space.bilibili.com/3494364286290001" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-bilibili.svg')" aria-hidden="true"></span>
+							Bilibili
+						</a>
+					</div>
+				</article>
+				<article class="channel-tile">
+					<div class="channel-tile-top">
+<!--						<span class="channel-badge">CP Algorithms</span>-->
+						<h3>NailFec Algo</h3>
+						<p>Providing clear introductions to competitive programming algorithms.</p>
+					</div>
+					<div class="channel-tile-actions">
+						<a href="https://www.youtube.com/@NailFecAlgo" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-youtube.svg')" aria-hidden="true"></span>
+							YouTube
+						</a>
+						<a href="https://search.bilibili.com/upuser?keyword=NailFec%20Algo" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-bilibili.svg')" aria-hidden="true"></span>
+							Bilibili
+						</a>
+					</div>
+				</article>
+				<article class="channel-tile">
+					<div class="channel-tile-top">
+<!--						<span class="channel-badge">Linux</span>-->
+						<h3>NailFec Linux</h3>
+						<p>Videos about recommendations of useful tools and efficient Linux techniques.</p>
+					</div>
+					<div class="channel-tile-actions">
+						<a href="https://www.youtube.com/@NailFecLinux" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-youtube.svg')" aria-hidden="true"></span>
+							YouTube
+						</a>
+						<a href="https://search.bilibili.com/upuser?keyword=NailFec%20Linux" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-bilibili.svg')" aria-hidden="true"></span>
+							Bilibili
+						</a>
+					</div>
+				</article>
+			</div>
 		</section>
+
+		<section class="feeds" id="repos">
+			<h2>GitHub repositories</h2>
+			<p class="section-note">My public GitHub repos pulled live from GitHub.</p>
+			<div id="repoGrid" class="feed-list" aria-live="polite">
+				<p class="muted">Loading repositories ...</p>
+			</div>
+			<p class="more">
+				<a href="https://github.com/NailFec" target="_blank" rel="noreferrer noopener">View full GitHub profile →</a>
+			</p>
+		</section>
+
+		<section class="links" id="links">
+			<h2>Links</h2>
+			<p class="section-note">Some links to my projects, and, find me on these websites!</p>
+
+			<div class="link-group">
+				<h3>Web Projects</h3>
+				<ul class="link-list compact">
+					<li>
+						<a class="link" href="https://nailfec.com" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/mdi-web.svg')" aria-hidden="true"></span>
+							<strong>Website</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://github.com/NailFec/RubricFlow" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/mdi-web.svg')" aria-hidden="true"></span>
+							<strong>RubricFlow</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://github.com/NailFec/liminal" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/mdi-console.svg')" aria-hidden="true"></span>
+							<strong>Liminal</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://gitmod.nailfec.net" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-git.svg')" aria-hidden="true"></span>
+							<strong>GitMod</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://moneytracker.nailfec.net" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/mdi-wallet-outline.svg')" aria-hidden="true"></span>
+							<strong>MoneyTracker</strong>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="link-group">
+				<h3>Social</h3>
+				<ul class="link-list compact">
+					<li>
+						<a class="link" href="https://www.reddit.com/user/NailFec" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-reddit.svg')" aria-hidden="true"></span>
+							<strong>Reddit</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://www.threads.net/@nailfec" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-threads.svg')" aria-hidden="true"></span>
+							<strong>Threads</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://www.instagram.com/nailfec" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-instagram.svg')" aria-hidden="true"></span>
+							<strong>Instagram</strong>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="link-group">
+				<h3>Coding</h3>
+				<ul class="link-list compact">
+					<li>
+						<a class="link" href="https://wakatime.com/@NailFec" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-wakatime.svg')" aria-hidden="true"></span>
+							<strong>WakaTime</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://github.com/NailFec" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/simple-icons-github.svg')" aria-hidden="true"></span>
+							<strong>GitHub</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://www.luogu.com.cn/user/1121118" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/mdi-trophy-outline.svg')" aria-hidden="true"></span>
+							<strong>Luogu</strong>
+						</a>
+					</li>
+					<li>
+						<a class="link" href="https://codeforces.com/profile/NailFec" target="_blank" rel="noreferrer noopener">
+							<span class="icon" style="--icon: url('assets/icons/mdi-trophy-outline.svg')" aria-hidden="true"></span>
+							<strong>Codeforces</strong>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+
 	</main>
 
 	<footer class="site-footer" role="contentinfo">
-		<p>© 2025 NailFec</p>
-		<div id="footer">
-			<img src="items/beian.png" alt="beian badge" height="12" />
-			<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602008053" target="_blank" rel="noreferrer noopener">沪公网安备31010602008053号</a>
-			<span aria-hidden="true">|</span>
-			<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer noopener">沪ICP备2024070301号</a>
-		</div>
+		<p>copyright © <span id="year">2026</span> NailFec</p>
 	</footer>
 
-	<script>
-		(function() {
-			const storageKey = 'theme-preference';
-			const getStoredPreference = () => localStorage.getItem(storageKey);
-			const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-			const current = getStoredPreference() || (preferDark ? 'dark' : 'light');
-			document.documentElement.dataset.theme = current;
-			const toggle = document.getElementById('themeToggle');
-			if (toggle) {
-				toggle.addEventListener('click', function() {
-					const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-					document.documentElement.dataset.theme = next;
-					localStorage.setItem(storageKey, next);
-				});
-			}
-		})();
-	</script>
+	<script src="app.js" defer></script>
 </body>
 </html>
