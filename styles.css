@@ -216,6 +216,17 @@ h2 {
 	border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
 }
 
+.link.is-disabled {
+	color: var(--muted);
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: 0.65;
+}
+
+.link.is-disabled .icon {
+	color: var(--muted);
+}
+
 .icon {
 	flex: 0 0 auto;
 	display: inline-block;
