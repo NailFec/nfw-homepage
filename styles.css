@@ -249,9 +249,6 @@ a:hover {
 
 .tool-group li {
 	display: inline-flex;
-	align-items: baseline;
-	gap: 0.4rem;
-	padding: 0.28rem 0.7rem;
 	border: 1px solid var(--line);
 	border-radius: 999px;
 	background: transparent;
@@ -269,7 +266,20 @@ a:hover {
 	border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
 }
 
-.tool-group li span {
+.tool-group li > a {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.4rem;
+	padding: 0.28rem 0.7rem;
+	color: inherit;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: inherit;
+}
+
+.tool-group li.is-empty span {
 	font-weight: 600;
 	letter-spacing: -0.02em;
 }
@@ -277,7 +287,25 @@ a:hover {
 .tool-group small {
 	font-family: var(--mono), serif;
 	font-size: 0.68rem;
+	font-weight: 400;
 	letter-spacing: 0.02em;
+	color: var(--muted);
+	cursor: inherit;
+}
+
+.tool-group li.is-empty,
+.tool-group li.is-empty:hover {
+	align-items: baseline;
+	gap: 0.4rem;
+	padding: 0.28rem 0.7rem;
+	color: var(--muted);
+	border-color: var(--line);
+	background: transparent;
+	cursor: default;
+}
+
+.tool-group li.is-empty span,
+.tool-group li.is-empty small {
 	color: var(--muted);
 }
 
