@@ -351,9 +351,7 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	.experience,
-	.tools,
-	.favorites {
+	.page > section {
 		animation: rise 0.7s ease both;
 	}
 }
